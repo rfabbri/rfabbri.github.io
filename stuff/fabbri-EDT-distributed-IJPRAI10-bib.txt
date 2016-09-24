@@ -1,0 +1,10 @@
+@article{Fabbri:EDT:distributed:IJPRAI10,
+    author = "Julio Cesar Torelli and Ricardo Fabbri and Gonzalo Travieso and Odemir M. Bruno",
+    journal = "International Journal of Pattern Recognition and Artificial Intelligence",
+    number = "6",
+    pages = "1--19",
+    title = "A high performance {3D} exact Euclidean distance transform
+    algorithm for distributed computing",
+    volume = "24",
+    year = "2010",
+}

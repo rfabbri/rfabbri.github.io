@@ -1,0 +1,61 @@
+/*
+ * Author: Ricardo Fabbri [rfabbri at lems .ddot. brown .ddot. edu)
+ */
+
+/* * {margin: 0; padding: 0;}*/
+a {
+   color: #ff0000;
+   text-decoration:none;
+}
+
+a:hover, a:active, a:focus {
+   background-color: #FFFFAA
+}
+
+a:visited {
+   color: #800000
+}
+
+body {
+   margin: 0;
+   padding: 0;
+   background-color: #aaaaaa;
+/*   background: gray url(figs/bgshade.png) repeat-x top;*/
+   font-family:"Helvetica","Verdana","Arial",sans-serif;
+   font-size: 90%;
+   color:#484848;
+}
+
+p {
+line-height: 1.5em;
+}
+ul {
+line-height:1.5em;
+}
+
+#container {
+  max-width: 800px;
+	margin: 0 auto 0 auto;
+  padding: 0;
+  background: url(figs/border-fade.png) repeat-y;
+  /* Workaround to ignore default padding/margin */
+  border-top:solid white;
+  border-top-width:1px;
+  border-bottom:solid white;
+  border-bottom-width:1px;
+}
+#content {
+  padding-left: 30px;
+  padding-right: 30px;
+  margin:0;
+}
+
+h1 {
+  color:#484848;
+}
+h3 {
+  color:#484848;
+}
+h4 {
+  color:#666666;
+}

@@ -1,0 +1,6 @@
+@article{Fabbri:etal:Arxiv2012,
+  title={Scilab and {SIP} for Image Processing},
+  author={Fabbri, R. and Bruno, O. M. and Costa, L.F.},
+  journal={Arxiv preprint arXiv:1203.4009},
+  year={2012}
+}

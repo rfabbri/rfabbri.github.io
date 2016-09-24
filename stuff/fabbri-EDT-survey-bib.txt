@@ -1,0 +1,9 @@
+@article{Fabbri:EDT:survey:ACMCSurv08,
+    author = "R. Fabbri and L. da F. Costa and J. C. Torelli and O. M. Bruno",
+    journal = "ACM Computing Surveys",
+    number = "1",
+    pages = "1--44",
+    title = "2D Euclidean Distance Transform Algorithms: A Comparative Survey",
+    volume = "40",
+    year = "2008",
+}

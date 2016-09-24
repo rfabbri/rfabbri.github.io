@@ -1,0 +1,22 @@
+@INPROCEEDINGS{Fabbri:Kimia:CVPR10,
+    Author         = {Ricardo Fabbri and Benjamin B. Kimia},
+    Booktitle      = {Proceedings of the IEEE Conference on Computer Vision and Pattern
+                      Recognition},
+    Crossref       = {CVPR2010},
+    Title          = {{3D} Curve Sketch: Flexible Curve-Based Stereo Reconstruction and Calibration},
+    Year           = {2010}
+}
+
+@PROCEEDINGS{CVPR2010,
+  title = {CVPR'10: IEEE Computer Society Conference on Computer Vision and
+    Pattern Recognition, San Francisco, California},
+  year = {2009},
+  address = {San Francisco, California, USA},
+  publisher = {IEEE Computer Society Press},
+  month = {},
+  author = {Proceedings},
+  booktitle = {Proceedings of the IEEE Computer Society Conference on Computer Vision
+    and Pattern Recognition},
+  key = {CVPR2010}
+}
+

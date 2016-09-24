@@ -1,0 +1,7 @@
+@article{Fabbri:etal:PhysicaA2012,
+title={Multi-q pattern analysis: A case study in image classification},
+author={Fabbri, R. and Gon{\c{c}}alves, W.N. and Lopes, F.J.P. and Bruno, O.M.},
+journal={Physica A: Statistical Mechanics and its Applications},
+year={2012},
+publisher={North-Holland}
+}

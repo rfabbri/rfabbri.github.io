@@ -1,0 +1,11 @@
+@PHDTHESIS{Fabbri:PHD:2010,
+    Address        = {Providence, RI, 02912},
+    Author         = {Ricardo Fabbri},
+    Institution    = {Division Of Engineering, Brown University},
+    School         = {Division Of Engineering, Brown University},
+    Month          = {July},
+    Title          = {Multiview Differential Geometry in
+    Application to Computer Vision},
+    Type           = {{Ph.D.} Dissertation},
+    Year           = {2010}
+}
