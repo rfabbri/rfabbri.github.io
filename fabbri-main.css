@@ -59,3 +59,8 @@ h3 {
 h4 {
   color:#666666;
 }
+
+#pub li {margin-bottom:1em;}
+a.publink {
+   color:#484848;
+}
