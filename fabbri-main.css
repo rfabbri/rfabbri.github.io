@@ -60,7 +60,7 @@ h4 {
   color:#666666;
 }
 
-#pub li {margin-bottom:1em;}
+#pub > li {margin-bottom:1em;}
 a.publink {
    color:#484848;
 }
