@@ -1,0 +1,19 @@
+@inproceedings{Usumezbas:Fabbri:Kimia:ECCV16,
+    Author         = {Anil Usumezbas and Ricardo Fabbri and Benjamin B. Kimia},
+    Booktitle      = {Proceedings of the European Conference on Computer Vision},
+    Crossref       = {ECCV2016},
+    Title          = {From multiview image curves to {3D} drawings},
+    Year           = {2016}
+}
+
+@proceedings{ECCV2016,
+  title     = {Computer Vision - ECCV 2016, 14th European Conference on
+               Computer Vision, Amsterdam, Netherlands, October 8-16,
+               2016, Proceedings},
+  booktitle = {14th European Conference on
+               Computer Vision, Amsterdam, Netherlands, October 8-16,
+               2016},
+  publisher = {Springer},
+  series    = {Lecture Notes in Computer Science},
+  year      = {2016}
+}
