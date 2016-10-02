@@ -10,7 +10,7 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
   <meta name="Author" content="Ricardo Fabbri">
-   <link rel="stylesheet" type="text/css" href="http://www.lems.brown.edu/~rfabbri/fabbri-main.css" title="Fabbri Website Style">
+   <link rel="stylesheet" type="text/css" href="../fabbri-main.css" title="Fabbri Website Style">
 
   <title>3D Reconstruction from Handheld Camera Project</title>
 </head>
@@ -20,11 +20,20 @@
 
 <h2>Reconstruction and Auto-Calibration Using a Handheld Camera</h2>
 
+<p><b>
+  This page on point-based technology mostly predates Noah Snavely's  <a
+    href="http://phototour.cs.washington.edu/bundler/">Bundler</a> and <a
+    href="http://ccwu.me/vsfm">VisualSfM</a>.  Please refer to their source code
+  for most of the modules described here. You can still benefit from this page
+  as a design guide for implementing your own SfM system or carrying out
+  enhacements to Bundler.</b>
 <p>
-The purpose of this ongoing project is to implement a system that takes an input
+
+<p>
+The purpose of this <b>still interesting project</b> is to implement a system that takes an input
 video sequence of a static scene and outputs the position of the camera at each
 frame, estimates of the intrinsic parameters, and reconstructed 3D points.&nbsp;
-The participants have developed familiarity with recent methods of automatic
+Participating students have developed familiarity with recent methods of automatic
 reconstruction from uncalibrated cameras, which are used in 3D photography,
 match-move applications in the entertainment industry, and photogrammetry.
 </p>
@@ -32,11 +41,10 @@ match-move applications in the entertainment industry, and photogrammetry.
 
 <p>
 I (<a href="http://rfabbri.github.io">Ricardo Fabbri</a>) have
-matlab and C++ code for many of the parts of this project, and other participants
-have been putting them together to form a more complete system.  I have
-supervised and helped other students very closely on this project.</p>
+matlab, scilab and C++ code for many of the parts of this project, and other participants
+have put them together to form a more complete system. </p>
 
-<p><b>Check out a video of a working system:</b></p>
+<p><b>Check out a video of a classic working system:</b></p>
 
 <p align="center"><object width="425" height="344"><param name="movie"
 value="http://www.youtube.com/v/2mvzHvPYX0k&hl=en&fs=1"></param><param
@@ -117,7 +125,7 @@ and, then, using these parameters together with the projective reconstruction
 obtained in step 4, one can generate a final metric reconstruction. By showing
 the positions of the cameras, the student can verify if it looks ok.</li>
 
-<li><b>Auto-calibration</b> (Optinal/Challenge). Even without knowing the intrinsic parameters of the cameras, the student can
+<li><b>Auto-calibration</b> (Optional/Challenge). Even without knowing the intrinsic parameters of the cameras, the student can
 still generate a final reconstruction from 4), bypassing any manual
 calibration procedure as done in 5). This is performed by solving so-called
 auto-calibration equations. We have no code for this part, but the student can
@@ -177,6 +185,7 @@ from the following link provide a few images with corners and camera
 parameters for each image, as well as reconstructed 3D corners.</li>
  <li><a href="http://vision.middlebury.edu/mview/">Middlebury multiview datasets</a> - the
  standard dataset of the area, providing many calibrated views of a single easily-segmentable object.</li>
+ <li><a href="http://multiview-3d-drawing.sf.net">Multiview 3D Drawings</a> - lists many datasets, including a very realistic synthetic dataset with varying illumination and full ground truth.</li>
 </ul>
 </p>
 
@@ -191,9 +200,9 @@ parameters for each image, as well as reconstructed 3D corners.</li>
 
 
 <br />
-<b>&lt;&lt;</b> <a href="http://www.lems.brown.edu/~rfabbri/">home</a>
+<b>&lt;&lt;</b> <a href="../">home</a>
 &nbsp;
-<b>&lt;&lt;</b> <a href="http://www.lems.brown.edu/vision/courses/image-processing/">en161</a>
+<b>&lt;&lt;</b> <a href="http://multiview-3d-drawing.sf.net">3D Drawings</a>
 
 </div> <!-- content -->
 <div id="rightcol"></div>
