@@ -20,7 +20,7 @@
 
 <h2>Research on Multiview Differential Geometry of Curves and Surfaces</h2>
 
-<h4><a href="http://www.lems.brown.edu/~rfabbri/">Ricardo Fabbri</a>
+<h4><a href="http://rfabbri.github.io">Ricardo Fabbri</a>
 and <a href="http://www.lems.brown.edu/kimia.html">Benjamin Kimia</a></h4>
 
 <p>
@@ -30,45 +30,48 @@ have been developing a new framework to model curved structures on both space
 and time, including general non-planar curves, surfaces, shading,
 curvilinear camera trajectories, and nonrigid motion.
 </p>
-<p> <a href="http://www.lems.brown.edu/~rfabbri/sfm/">State-of-the-art camera calibration and 3D reconstruction
+<p> <a href="../sfm/index.html">State-of-the-art camera calibration and 3D reconstruction
 systems</a> are based on very sparse point features, such as SIFT, and projective
 geometry,
 which can only model points and lines or
 simple curves such as circles and other conic sections.  These systems
 suffer from many of the following limitations: sparsity, requirements of simple
-scene, controlled acquisition, difficulty with non-planar objects, requirement of strong
-calibration, short baselines, and lack of geometric consistency.
+scene, controlled acquisition, difficulty with non-planar objects, requirement
+of strong calibration, abundant texture, short baselines, and lack of geometric
+consistency. We believe these systems are useful but form only a module within a
+greater structure from motion system.
 </p>
 
-
 <p>
-Given two or more views of a fixed space curve, <b>we have shown how the torsion of the
+Given two or more views of a fixed space curve, in 2004 <b>we have shown how the torsion of the
 curve can be reconstructed from image measurements</b> (<a
- href="http://www.lems.brown.edu/~rfabbri/stuff/emmcvpr-rfabbri-kimia-corrected-sign.pdf">pdf</a>). Two views
-are necessary and sufficient, and more than 3 views provide an
-over-constrained solution.  This study has opened an entire new line of
+href="https://arxiv.org/abs/1604.08256">pdf</a>). Two views are necessary and
+sufficient, and more than 3 views provide an
+over-constrained solution.  This initial study has opened an entire new line of
 research, where we have extended these results to most types of contours
 (rigid, occluding, nonrigid), and have been modeling many other problems
 involving curvilinear phenomena
 in the geometry of multiple views, including camera auto-calibration from tracked
-curves, and the use of surface patches and their shading under different
-illumination models for multiview applications.
+curves, the use of surface patches and their shading under different
+illumination models, and fields of both short and long curve fragments for multiview applications.
 </p>
 <p style="text-align:center;">
-<img  src="http://www.lems.brown.edu/~rfabbri/differential-mvg/imgs/multiview-rig.png" width=381 height=261 alt="Multiview geometry of a space curve" />
+<img  src="imgs/multiview-rig.png" width="381" height="261" alt="Multiview geometry of a space curve" />
 </p>
 
 <p>
-We are also working on a <b>practical application</b> of automatically reconstructing complex 3D
-objects from a sequence of images. One of our systems is based on
-image curve fragments as obtained from a subpixel edge linker. The simple case of
-possible corresponding curve fragments in two views is shown in the following
+We are also working on a <b>practical and comprehensive application</b> for automatically reconstructing complex 3D
+objects from a sequence of images, and have completed many modules. <a href="http://multiview-3d-drawings.sf.net">One of our systems</a> is based on
+image curve fragments as obtained from a subpixel edge linker. A simple step
+in corresponding curve fragments in two views is shown in the following
 figure, where the epipolar lines are in green:
 </p>
 
 <p style="text-align:center;">
-<img  src="http://www.lems.brown.edu/~rfabbri/differential-mvg/imgs/david-0-5-onepoint-epip-small.png" width=500 height=243 alt="Curve correspondence" />
+<img  src="imgs/david-0-5-onepoint-epip-small.png" width="500" height="243" alt="Curve correspondence" />
 </p>
+
+Please check the <a href="http://multiview-3d-drawings.sf.net">website for Multiview 3D Drawings</a> for a recent implementation presented in ECCV'16.
 
 
 
@@ -82,53 +85,80 @@ reconstruction has many advantages over point features:
  <li>Curves are intimately related to the geometry of the underlying surface,
  being useful in practice as a reliable constraints for surface-based reconstructions
  of general scenes.</li>
- <li>Curves as are largely invariant to illumination.</li>
+ <li>Curves as are strongly invariant to illumination.</li>
 </ul>
 <p>
-We have been tackling the challenges of using linked curve fragments, namely the
-instabilities in linking and correspondence and the existence of multiple curve
-models (e.g. fixed, occluding, nonrigid). More publications to
-come soon.
+We tackled the challenges of using linked curve fragments, namely the
+instabilities in linking and correspondence in the 3D Drawing system. The
+existence of multiple curve models (e.g. fixed, occluding, nonrigid), the trifocal bootstrapping of the system, and the surfacing of 3D Drawings are currently active topics.
 </p>
 
 <h3>Publications</h3>
 
- <ul style="line-spacing:2em">
- <li>R. Fabbri, "Multiview Differential Geometry in Application to Computer
- Vision", Ph.D. Thesis, Division of Engineering, Brown University, 2010 
- (<a href="../stuff/Fabbri-PhD-Thesis-2010.pdf">pdf</a> | 
- <a href="../stuff/Fabbri-PhD-Thesis-2010-bib.txt">bib</a>) <span style="color:green"> new! </span>
+<ul id="pub" style="list-style: none;">
+ <li><b><a class="publink" href="http://link.springer.com/article/10.1007%2Fs11263-016-0912-7">Multiview Differential Geometry of Curves</a></b>,
+   <i>International Journal of Computer Vision</i>, 2016, with Ben Kimia. My most important theoretical work (<a href="https://arxiv.org/abs/1604.08256">pdf</a> | <a href="http://multiview-3d-drawing.sf.net">code</a> | <a href="stuff/fabbri-kimia-IJCV2016-bib.txt">bib</a>)
+<span style="color:green"> new! </span>
+<ul style="list-style: none;">
+   <li>The main result is the reconstruction of torsion and curvature derivative of a
+   space curve from multiple perspectives, a fundamental theorem I proved in 2004 in the
+   beginning of my Ph.D. This paper is the outgrowth of that effort, including
+   continuous motion, non-rigid scenes, intrinsic parameters and camera estimation from occluding
+   contours. It is the seed for a monograph I've been writing, a kind of an extended Hartley &amp; Zisserman's book for general curves and differential geometry. For instance, if you need to reconstruct orientations from two or more views (SIFT orientations or other vector fields, including curvature and torsion fields), this is the place to go. The notation to deal with these problems is also the most up to date in this manuscript. Code is available as part of the code for the <a href="http://multiview-3d-drawing.sf.net">3D curve drawing system</a>.
+   </li> 
+</ul>
+ </li>
 
- <li> R. Fabbri and B. B. Kimia "3D Curve Sketch: Flexible Curve-Based Stereo Reconstruction and
-Calibration", <i> IEEE CVPR 2010</i>. (<a
- href="../stuff/fabbri-kimia-CVPR10.pdf">pdf</a> | 
- <a href="../stuff/fabbri-kimia-poster-CVPR10.pdf">poster</a> | 
+ <li><b><a class="publink" href="http://arxiv.org/abs/1609.05561">From Multiview Image Curves to 3D Drawings</a></b>, <i>ECCV 2016</i>, with Anil Usumezbas &amp; Ben Kimia, Expanded version available (<a href="http://multiview-3d-drawing.sf.net/papers/usumezbas-fabbri-kimia-ECCV2016-expanded.pdf">pdf</a> | <a href="http://multiview-3d-drawing.sf.net/papers/usumezbas-fabbri-kimia-ECCV2016-expanded.pdf">supplement</a> | <a href="http://multiview-3d-drawing.sf.net">code</a> | <a href="http://multiview-3d-drawing.sf.net">datasets</a> | <a href="http://multiview-3d-drawing.sf.net">website</a> | <a href="stuff/usumezbas-fabbri-kimia-ECCV2016-bib.txt">bib</a>)
+<span style="color:green"> new! </span>
+ </li>
+
+ <li><b><a href="http://link.springer.com/chapter/10.1007%2F978-3-642-33765-9_17#page-1">Camera Pose Estimation Using Curve
+     Differential Geometry</a></b>, <i>ECCV 2012, Firenze, Italy</i>, with Peter J. Giblin &amp; Ben Kimia (<a
+ href="stuff/fabbri-giblin-kimia-ECCV12-accepted-draft.pdf">pdf</a> | 
  <a
- href="../stuff/fabbri-kimia-CVPR10-bib.txt">bib</a>)<span style="color:green"> new! </span>
- <li> 
- R. Fabbri, B. B. Kimia, "High-Order Differential geometry of Curves for
- Multiview Reconstruction and Matching", EMMCVPR 2005, <i>Lecture Notes in Computer
- Science</i>, 3757, pp. 645-660, 2005. (<a href="http://www.lems.brown.edu/~rfabbri/stuff/emmcvpr-rfabbri-kimia-corrected-sign.pdf">corrected version</a>)
- <ul>
-   <li>Theoretical paper on recovering torsion and curvature derivative of a
-   space curve from multiple perspectives  </li>
-   <li>The formulas in the original paper have some minor imprecisions regarding the <i>sign</i> of the
-   curvature. The corrected version fixes this issue.
-   <li>I wrote extensions of the formulas that take into account the
-   <i>intrinsic</i> parameters. They show how the image point, tangent, curvature, and
-   curvature derivative change under the transformation given by the intrinsic
-   parameter matrix <tt>K</tt>.
-   </li>
-   <li> I implemented the formulas of this paper in a curve
-   reconstruction system, just drop me an email and I will provide you with 
-   the code. </li>
- </ul>
- </ul>
+ href="stuff/fabbri-giblin-kimia-ECCV12-supplementary-draft.pdf">supplementary</a> | 
+ <a href="https://github.com/rfabbri/diffgeom2pose">code</a> |
+ <a href="stuff/fabbri-giblin-kimia-ECCV12-bib.txt">bib</a>)
+ </li>
+
+<!-- <li>R. Fabbri, W. N. Goncalves, F. J. P. Lopes, O. M. Bruno "<b>Multi-q pattern-->
+<!-- analysis: A case study in image classification</b>",-->
+<!-- <i>Physica A: Statistical Mechanics and its Applications</i>, 2012,-->
+<!-- (<a href="stuff/fabbri-etal-physicaA-2012-accepted-proof-v1.pdf">pdf</a> | <a-->
+<!-- href="stuff/fabbri-tsallis-physicaA-2012-bib.txt">bib</a>)-->
+<!-- <span style="color:green"> new! </span>-->
+<!-- </li>-->
+
+ <li><b>Multiview Differential Geometry in Application to Computer
+ Vision</b>, <i>my Ph.D. Thesis</i>, School of Engineering, Brown University, 2010. Partly superseded by the above papers, still has much valuable insight
+ (<a href="stuff/Fabbri-PhD-Thesis-2010.pdf">pdf</a> | 
+ <a href="stuff/Fabbri-PhD-Thesis-2010-bib.txt">bib</a>)
+ </li>
+
+<!-- <li>J. C. Torelli, R. Fabbri, G. Travieso, O. M. Bruno "<b>A high performance 3D-->
+<!-- exact Euclidean distance transform algorithm for distributed computing</b>",-->
+<!-- <i>International Journal of Pattern Recognition and Artificial Intelligence</i>, 2010. -->
+<!-- (<a href="stuff/torelli-fabbri-costa-bruno-IJPRAI2010.pdf">pdf</a> | <a-->
+<!-- href="stuff/fabbri-EDT-distributed-IJPRAI10-bib.txt">bib</a>)-->
+<!-- </li>-->
+
+ <li><b>3D Curve Sketch: Flexible Curve-Based Stereo Reconstruction and
+Calibration</b>, <i> CVPR 2010</i>, with B. Kimia. The practical basis of the 3D Curve Drawing work above (<a
+ href="stuff/fabbri-kimia-CVPR10.pdf">pdf</a> | 
+ <a href="stuff/fabbri-kimia-poster-CVPR10.pdf">poster</a> | 
+ <a href="http://multiview-3d-drawing.sf.net">code</a>  |
+ <a href="http://multiview-3d-drawing.sf.net">website</a>  |
+ <a href="stuff/fabbri-kimia-CVPR10-bib.txt">bib</a>)
+ </li>
+
+
+
 <br />
-<b>&lt;&lt;</b> <a href="http://www.lems.brown.edu/~rfabbri/">home</a>
+<b>&lt;&lt;</b> <a href="../">home</a>
 &nbsp;
 <b>&lt;&lt;</b> <a
-href="http://www.lems.brown.edu">lems</a>
+href="http://multiview-3d-drawing.sf.net">3D Drawings</a>
 
 </div> <!-- end content -->
 </div> <!-- end container -->
