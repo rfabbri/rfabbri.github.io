@@ -34,7 +34,31 @@ cd pack
 ln -s ~/.vim/prv/pack/ttm
 </pre>
 
+(reads aa.txt in vim)
+(first 3 paragraphs in intro seem well written)
+(could make use of the term micrologging/microblogging)
+(jumps to section 3 - install)
 
+In Vim, I try loading by hand:
+
+<pre>
+:packadd aa
+
+
+
+Error detected while processing function PRVLeaderHelper[2]..PRVDeclareLeader:
+line    2:
+E121: Undefined variable: g:mapleader
+E15: Invalid expression: [g:mapleader, g:maplocalleader]
+line    4:
+E121: Undefined variable: g:prvset
+E116: Invalid arguments for function has_key(g:prvset.leaders, a:plug)
+E15: Invalid expression: has_key(g:prvset.leaders, a:plug)
+Error detected while processing function PRVLeaderHelper[4]..PRVRestoreLeader:
+line    1:
+E716: Key not present in Dictionary: aa
+E15: Invalid expression: g:prv.leaders[a:plug]
+</pre>
 
 <img src="https://yip.su/1lJGw" alt="stat" border="0">
 
@@ -43,15 +67,6 @@ ln -s ~/.vim/prv/pack/ttm
 <script type="text/javascript">
 _uacct = "UA-2330057-1";
 urchinTracker();
-</script>
-
-
-
-<script>
-  $.get( "http://aaserver.herokuapp.com/minimumClient/", function( data ) {
-  var text = data;
-  document.getElementById("aa").innerHTML=text;
-});
 </script>
 
 </body>
