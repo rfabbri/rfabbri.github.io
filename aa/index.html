@@ -66,6 +66,24 @@ Question: if I fix that, I should also fix the PRV framework.
 This is a copy-paste and supposed to be identical, right?  
 
 
+<p>I fixed the leader by adapting this code from vimlatex:</p>
+
+<pre>
+let s:mapleader = exists('g:mapleader') ? g:mapleader : "\\"
+</pre>
+
+I do that in the beginning of the script.
+
+Now, there were other problems: I had to remoe this:
+
+<pre>
+    let g:mapleader = g:prvset.leaders[a:plug][0]
+    let g:maplocalleader = g:prvset.leaders[a:plug][1]
+</pre>
+
+Since prvset was not defined. Maybe I can fix that in PRV later on.
+
+
 <img src="https://yip.su/1lJGw" alt="stat" border="0">
 
 <script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
