@@ -8,203 +8,33 @@
    $Revision$ $Date$
 -->
 <head>
+  <script src="jquery-3.3.1.min.js"></script>
   <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
   <meta name="Author" content="Ricardo Fabbri">
    <link rel="stylesheet" type="text/css" href="../fabbri-main.css" title="Fabbri Website Style">
 
-  <title>3D Reconstruction from Handheld Camera Project</title>
+  <title>AA, Vim and PRV framework log journal</title>
 </head>
 <body>
 <div id="container">
 <div id="content">
 
-<h2>Reconstruction and Auto-Calibration Using a Handheld Camera</h2>
-
-<p><b>
-  This page on point-based technology mostly predates Noah Snavely's  <a
-    href="http://phototour.cs.washington.edu/bundler/">Bundler</a> and <a
-    href="http://ccwu.me/vsfm">VisualSfM</a>.  Please refer to their source code
-  for most of the modules described here. You can still benefit from this page
-  as a design guide for implementing your own SfM system or carrying out
-  enhacements to Bundler.</b>
-<p>
-
-<p>
-The purpose of this <b>still interesting project</b> is to implement a system that takes an input
-video sequence of a static scene and outputs the position of the camera at each
-frame, estimates of the intrinsic parameters, and reconstructed 3D points.&nbsp;
-Participating students have developed familiarity with recent methods of automatic
-reconstruction from uncalibrated cameras, which are used in 3D photography,
-match-move applications in the entertainment industry, and photogrammetry.
-</p>
+<h2>My experience with AA for VIM</h2>
 
 
-<p>
-I (<a href="http://rfabbri.github.io">Ricardo Fabbri</a>) have
-matlab, scilab and C++ code for many of the parts of this project, and other participants
-have put them together to form a more complete system. </p>
+<pre id="aa">
+</pre>
 
-<p><b>Check out a video of a classic working system:</b></p>
+Installed prv: 
+<pre>
+cd ~/.vim
+git clone git@github.com:ttm/prv.git
+mkdir pack
+cd pack
+ln -s ~/.vim/prv/pack/ttm
+</pre>
 
-<p align="center"><object width="425" height="344"><param name="movie"
-value="http://www.youtube.com/v/2mvzHvPYX0k&hl=en&fs=1"></param><param
-name="allowFullScreen" value="true"></param><embed
-src="http://www.youtube.com/v/2mvzHvPYX0k&hl=en&fs=1"
-type="application/x-shockwave-flash" allowfullscreen="true" width="425"
-height="344"></embed></object></p>
 
-<br />
-<br />
-<br />
-<p><b>Stages of the System</b>
-</p>
-<br />
-<img alt="Stages of a 3D reconstruction system"
-src="figs/reconstruction-cycle-sm.png">
-
-<p><b>Implementation Guidelines</b>
-
-<ol>
-<li><b>Detect interest points in each image and match them</b> using similarity of
-appearance.
-Usually SIFT features are used [Lowe]. I have code for SIFT which is integrated
-with the rest of the steps below. However, numerous recent studies have pointed
-to the combination of a Hessian-Affine detector with a SIFT descriptor as the
-best solution for wide baseline and 3D scenes; including this into the
-reconstruction system would be of great benefit. Implementing this stage 
-involves getting familiar with sparse point features in practice, such as
-sensibly selecting the parameters.
-</li>
-
-<li><b>Compute the epipolar geometry / fundamental matrix between pairs of
-views</b>.
-This is performed using a robust estimation strategy, called RANSAC.
-Only reliable feature matches are retained.
-I also have code for this part. The task of the student is to develop a working knowledge of fundamental matrix estimation and the geometry of multiple views.
-</li>
-
-<li><b>Two-view reconstruction.</b> From two selected views, or <i>key frames</i>, obtain
-initial cameras and reconstructions. 
-<ul>
- <li>Obtain two
-canonical camera matrices as described in [Hartley and Zisserman]. These camera
-matrices differ from the true ones by a 8-parameter ambiguity, but we can
-nevertheless work with them for the purpose of enforcing consistency between the
-whole video sequence. </li>
-
-<li> <i>Triangulate</i> the two-view matches to get
-initial 3D points. This step must be performed as well as possible, since the
-entire system will rely on it. Use optimal triangulation [Hartley and Zisserman, ch. 12].
-</li>
-</ul>
-
-<br />
-
-</li>
-
-<li> <b>Incrementally add more views.</b> The output of this stage will be a
-multiview projective reconstruction. Starting from the two key frames,
-incrementally add another frame, forming
-the key frame set. Impose consistency of the new frame with the previous key
-frame set. This is performed using camera pose (also called resectioning) from
-3D points to 2D points, assuming the canonical cameras as true ones. A robust
-RANSAC strategy guides this process in order to eliminate false feature
-correspondences. Keep adding frames and imposing consistency once no new frame
-can be added.
-We have code for the basic components, but the student will have to put it
-together in order to obtain a camera resectioning routine that works with
-RANSAC. This can be done with the aid of students in our lab.
-</li>
-
-<li><b>Evaluate the projective reconstruction.</b> The camera parameters (rotations, translations, and intrinsic parameters) and
-the 3D reconstruction of matching feature points are now known up to 8 degrees of
-freedom. The hardest part of the project is now done. The student must evaluate
-this reconstruction before proceeding. One way of doing it is to get the
-intrinsic parameters of the camera using some traditional calibration board,
-and, then, using these parameters together with the projective reconstruction
-obtained in step 4, one can generate a final metric reconstruction. By showing
-the positions of the cameras, the student can verify if it looks ok.</li>
-
-<li><b>Auto-calibration</b> (Optional/Challenge). Even without knowing the intrinsic parameters of the cameras, the student can
-still generate a final reconstruction from 4), bypassing any manual
-calibration procedure as done in 5). This is performed by solving so-called
-auto-calibration equations. We have no code for this part, but the student can
-ask for help in our lab.
-</li>
-
-<li><b>Dense stereo and Texture-mapping.</b> (Optinal/Challenge). This will
-provide a visually pleasing reconstruction of an object captured by the video
-sequence. This involves doing some dense-stereo using the known cameras in order
-to generate dense 3D structure, followed by texture-mapping by backprojecting
-the image intensities onto the 3D structure. </li>
-
-</ol>
-</p>
-<b>References</b>
-
-<ul>
-<li>
-[Pollefeys] Marc Pollefeys et al. <i><a href="Papers/PollefeysIJCV04.pdf">Visual
-Modeling with a Handheld Camera</a></i>,
-International Journal of Computer Vision, 2004. See also the PhD
-thesis, Marc Pollefeys, K. U. Leuven 1999:
-(<a
-href="http://www.lems.brown.edu/%7Erfabbri/stuff/PhD-Pollefeys.pdf">PDF</a>)
-</li>
-
-<li>[Hartley and Zisserman] Hartley and Zisserman's book, Cambridge University
-Press.</li>
-
-<li>[Lowe]Iryna Gordon's Msc thesis, U. of British Columbia. Advisor: D. Lowe.
-(<a
-href="Papers/gordonthesis-SIFT-lowe.pdf">PDF</a>).
-</li>
-</ul>
-
-<p><b>Links</b>
-<ul>
- <li>University of Washington's <a href="http://phototour.cs.washington.edu">Phototourism</a>. Source code
- available in <a href="http://phototour.cs.washington.edu/bundler/">Bundler</a>. <i>Everybody is using it!</i></li>
- <li>Google Panoramio's <a href="http://www.panoramio.com/blog/hi-look-around/">Look Around</a></li>
- <li><a href="http://www.2d3.com">2d3</a>: a company offering a range of
- products based on the
- technology used in this project</li>
-</ul>
-</p>
-
-<p><b>Ground-Truth Datasets</b>
-<ul>
- <li><a
- href="http://graphics.ethz.ch/research/past_projects/3dvideo/main.php?Menu=7&Submenu=0">Kung-Fu
- Fighter</a> - a real dataset with cameras and 3D points</li>
- <li><a href="http://www.mpi-inf.mpg.de/departments/irg3/kungfu/">Kung-Fu
- Girl</a> - a synthetic dataset</li>
- <li><a href="http://www.robots.ox.ac.uk/~vgg/data/data-mview.html">Oxford
- datasets</a> - The model house and corridor sequence
-from the following link provide a few images with corners and camera
-parameters for each image, as well as reconstructed 3D corners.</li>
- <li><a href="http://vision.middlebury.edu/mview/">Middlebury multiview datasets</a> - the
- standard dataset of the area, providing many calibrated views of a single easily-segmentable object.</li>
- <li><a href="http://multiview-3d-drawing.sf.net">Multiview 3D Drawings</a> - lists many datasets, including a very realistic synthetic dataset with varying illumination and full ground truth.</li>
-</ul>
-</p>
-
-<!--<p><b>Student Presentations</b>-->
-<!--<ul>-->
-<!-- <li>Shawn Kitchner's <a-->
-<!-- href="http://www.lems.brown.edu/vision/courses/image-processing/Presentations/presentations.htm">class-->
-<!-- project presentations</a></li>-->
-<!--</ul>-->
-<!--</p>-->
-
-<br />
-<b>&lt;&lt;</b> <a href="../">home</a>
-&nbsp;
-<b>&lt;&lt;</b> <a href="http://multiview-3d-drawing.sf.net">3D Drawings</a>
-
-</div> <!-- content -->
-<div id="rightcol"></div>
-</div> <!-- container -->
 
 <img src="https://yip.su/1lJGw" alt="stat" border="0">
 
@@ -213,6 +43,15 @@ parameters for each image, as well as reconstructed 3D corners.</li>
 <script type="text/javascript">
 _uacct = "UA-2330057-1";
 urchinTracker();
+</script>
+
+
+
+<script>
+  $.get( "http://aaserver.herokuapp.com/minimumClient/", function( data ) {
+  var text = data;
+  document.getElementById("aa").innerHTML=text;
+});
 </script>
 
 </body>
