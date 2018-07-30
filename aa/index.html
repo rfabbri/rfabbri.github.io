@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<!--
+   Author: Ricardo Fabbri [rfabbri at lems .ddot. brown .ddot. edu)
+   
+   $Revision$ $Date$
+-->
+<head>
+  <!--  <script src="jquery-3.3.1.min.js"></script> -->
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+  <meta name="Author" content="Ricardo Fabbri">
+   <link rel="stylesheet" type="text/css" href="../fabbri-main.css" title="Fabbri Website Style">
+
+  <title>AA, Vim and PRV framework log journal</title>
+</head>
+<body>
+<div id="container">
+<div id="content">
+
+<h2>My experience with AA for VIM</h2>
+
+
+<pre id="aa">
+</pre>
+
+Installed prv: 
+<pre>
+cd ~/.vim
+git clone git@github.com:ttm/prv.git
+mkdir pack
+cd pack
+ln -s ~/.vim/prv/pack/ttm
+</pre>
+
+(reads aa.txt in vim)
+(first 3 paragraphs in intro seem well written)
+(could make use of the term micrologging/microblogging)
+(jumps to section 3 - install)
+
+In Vim, I try loading by hand:
+
+<pre>
+:packadd aa
+
+
+
+Error detected while processing function PRVLeaderHelper[2]..PRVDeclareLeader:
+line    2:
+E121: Undefined variable: g:mapleader
+E15: Invalid expression: [g:mapleader, g:maplocalleader]
+line    4:
+E121: Undefined variable: g:prvset
+E116: Invalid arguments for function has_key(g:prvset.leaders, a:plug)
+E15: Invalid expression: has_key(g:prvset.leaders, a:plug)
+Error detected while processing function PRVLeaderHelper[4]..PRVRestoreLeader:
+line    1:
+E716: Key not present in Dictionary: aa
+E15: Invalid expression: g:prv.leaders[a:plug]
+</pre>
+
+Now I'm editing .vim/prv/pack/ttm/opt/aa/aux/prvdependence.vim
+
+Question: if I fix that, I should also fix the PRV framework.
+This is a copy-paste and supposed to be identical, right?  
+
+
+<p>I fixed the leader by adapting this code from vimlatex:</p>
+
+<pre>
+let s:mapleader = exists('g:mapleader') ? g:mapleader : "\\"
+</pre>
+
+I do that in the beginning of the script.
+
+Now, there were other problems: I had to remoe this:
+
+<pre>
+    let g:mapleader = g:prvset.leaders[a:plug][0]
+    let g:maplocalleader = g:prvset.leaders[a:plug][1]
+</pre>
+
+Since prvset was not defined. Maybe I can fix that in PRV later on.
+
+(back to reading AA doc)
+
+Just read about
+<pre>
+`let g:prvset = {'leaders' : {'aa': [X, Y]}}`
+</pre>
+Inside aa help. But if prvset is not set, the code in prvdependence should still run I guess.
+So maybe a check if it exists?
+
+
+<img src="https://yip.su/1lJGw" alt="stat" border="0">
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-2330057-1";
+urchinTracker();
+</script>
+
+</body>
+</html>
