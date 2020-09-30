@@ -71,7 +71,7 @@ figure, where the epipolar lines are in green:
 <img  src="imgs/david-0-5-onepoint-epip-small.png" width="500" height="243" alt="Curve correspondence" />
 </p>
 
-<p>Check out the <a href="http://multiview-3d-drawings.sf.net">website for Multiview 3D Drawings</a> for a recent implementation presented in ECCV'16.
+<p>Check out the <a href="http://multiview-3d-drawings.sf.net">website for Multiview 3D Drawings</a> for a recent implementation presented at ECCV'16 and CVPR'17. See also CVPR'20 paper on the trifocal pose estimation modules.
 </p>
 
 <p>
@@ -94,10 +94,13 @@ practicalities around nonrigid curves (e.g. occluding and other nonrigid), the t
 
 <h3>Publications</h3>
 
+(updated list available at <a href="/">Fabbri's home page</a>)
+
 <ul id="pub" style="list-style: none;">
- <li><b><a class="publink" href="http://link.springer.com/article/10.1007%2Fs11263-016-0912-7">Multiview Differential Geometry of Curves</a></b>,
+ <li><b><a class="publink" href="http://link.springer.com/article/10.1007%2Fs11263-016-0912-7">Multiview Differential Geometry of Curves (Main Theoretical Paper)</a></b>,
    <i>International Journal of Computer Vision</i>, 2016, with Ben Kimia. My most important theoretical work (<a href="https://arxiv.org/abs/1604.08256">pdf</a> | <a href="http://multiview-3d-drawing.sf.net">code</a> | <a href="stuff/fabbri-kimia-IJCV2016-bib.txt">bib</a>)
 <span style="color:green"> new! </span>
+<small>
 <ul style="list-style: none;">
    <li>The main result is the reconstruction of torsion and curvature derivative of a
    space curve from multiple perspectives, a fundamental theorem I proved in 2004 in the
@@ -106,6 +109,54 @@ practicalities around nonrigid curves (e.g. occluding and other nonrigid), the t
    contours. It is the seed for a monograph I've been writing, a kind of an extended Hartley &amp; Zisserman's book for general curves and differential geometry. For instance, if you need to reconstruct orientations from two or more views (SIFT orientations or other vector fields, including curvature and torsion fields), this is the place to go. The notation to deal with these problems is also the most up to date in this manuscript. Code is available as part of the code for the <a href="http://multiview-3d-drawing.sf.net">3D curve drawing system</a>.
    </li> 
 </ul>
+</small>
+ </li>
+<ul id="pub" style="list-style: none;">
+  <li><b><a class="publink" href="https://ieeexplore.ieee.org/document/9057738">Camera Pose Estimation Using Curve Differential Geometry</a></b>, <i>IEEE Transactions on Pattern Analysis and Machine Intelligence - PAMI</i>, 2020, with Peter J. Giblin &amp; Ben Kimia (<a href="stuff/fabbri-giblin-kimia-PAMI2020.pdf">pdf</a> | <a href="https://github.com/rfabbri/diffgeom1pose">code</a>)
+<span style="color:green"> new! </span>
+  </li>
+  <li><b><a class="publink" href="https://arxiv.org/abs/1903.09755">Trifocal Relative Pose from Lines at Points and its Efficient Solution</a></b>, <i>CVPR 2020</i>, originally published online march 23 2019 4:29 UTC, with Tim Duff, Hongyi Fan, Margaret Regan, David de Pinho (my former MSc. Student), Elias Tsigaridas, Charles Wampler, Jonathan Hauenstein, Peter Giblin, Ben Kimia, Anton Leykin and Tomas Pajdla (<a href="stuff/fabbri-kimia-etal-arxiv2019-v3.pdf">pdf</a> |  
+   <a href="http://github.com/rfabbri/minus">code</a> | <a href="http://multiview-3d-drawing.sf.net">datasets</a>)
+   <span style="color:green"> accepted! won an award: <a href="https://mathinstitutes.org/highlights/algebraic-computer-vision-advances-the-3d-reconstruction-of-curves-and-surfaces-from-multiple-views/">NSF Research Institute Highlight</a></span>
+   <small>
+  <ul style="list-style: none;">
+    <li>
+      <em>
+        The 
+        <a href="https://mathinstitutes.org/highlights/algebraic-computer-vision-advances-the-3d-reconstruction-of-curves-and-surfaces-from-multiple-views/">research led and mentored by Fabbri</a> (with close leadership by his former advisor Ben Kimia at Brown) have been spawning a number of
+        <b>notorious works</b>, including an award-winning paper at CVPR 2019 (Duff, Kohn, Leykin, Pajdla)
+        which <a href="https://mathinstitutes.org/highlights/algebraic-computer-vision-advances-the-3d-reconstruction-of-curves-and-surfaces-from-multiple-views/">Fabbri pioneered while at ICERM</a> and can be considered an honorary last author. 
+          Fabbri's interest is in pushing the results beyond points and straight
+          lines, while using sophisticated machinery of Projective Differential
+          Geometry and nonlinear PDEs for building fast and robust algorithms.
+          -- September 2020
+        </a>
+      </em>
+    </li>
+  </ul>
+  </small>
+ </li>
+ <li><b><a class="publink" href="https://arxiv.org/abs/1707.03946">The Surfacing of Multiview 3D Drawings via Lofting and Occlusion Reasoning</a></b>, <i>CVPR 2017</i>, with Anil Usumezbas &amp; Ben Kimia, Expanded version available
+   (<a href="https://arxiv.org/pdf/1707.03946">pdf</a> | 
+ <a href="stuff/usumezbas-fabbri-kimia-poster-CVPR2017.pdf">poster</a> | 
+   <a href="http://multiview-3d-drawing.sf.net">datasets</a> | <a href="http://multiview-3d-drawing.sf.net">website</a> | <a href="stuff/usumezbas-fabbri-kimia-CVPR2017-bib.txt">bib</a>)
+ </li>
+ <li><b><a class="publink" href="http://link.springer.com/article/10.1007%2Fs11263-016-0912-7">Multiview Differential Geometry of Curves</a></b>,
+   <i>International Journal of Computer Vision</i>, 2016, with Ben Kimia. (<a href="https://arxiv.org/abs/1604.08256">pdf</a> | <a href="http://multiview-3d-drawing.sf.net">code</a> | <a href="stuff/fabbri-kimia-IJCV2016-bib.txt">bib</a>)
+<small>
+<ul style="list-style: none;">
+   <li>The main result is the reconstruction of torsion and curvature derivative of a
+   space curve from multiple perspectives, a fundamental theorem I proved in
+   2004. This paper is the outgrowth of that effort, including continuous
+   motion, non-rigid scenes, intrinsic parameters and camera estimation from
+   occluding contours. It is the seed for a monograph I've been writing, a kind
+   of an extended Hartley &amp; Zisserman's book for general curves and
+   differential geometry. For instance, if you need to reconstruct orientations
+   from two or more views (SIFT orientations or other vector fields, including
+   curvature and torsion fields), this is the place to go. 
+   </li> 
+</ul>
+</small>
  </li>
 
  <li><b><a class="publink" href="http://arxiv.org/abs/1609.05561">From Multiview Image Curves to 3D Drawings</a></b>, <i>ECCV 2016</i>, with Anil Usumezbas &amp; Ben Kimia, Expanded version available (<a href="http://multiview-3d-drawing.sf.net/papers/usumezbas-fabbri-kimia-ECCV2016-expanded.pdf">pdf</a> | <a href="http://multiview-3d-drawing.sf.net/papers/usumezbas-fabbri-kimia-ECCV2016-expanded.pdf">supplement</a> | <a href="http://multiview-3d-drawing.sf.net">code</a> | <a href="http://multiview-3d-drawing.sf.net">datasets</a> | <a href="http://multiview-3d-drawing.sf.net">website</a> | <a href="stuff/usumezbas-fabbri-kimia-ECCV2016-bib.txt">bib</a>)
