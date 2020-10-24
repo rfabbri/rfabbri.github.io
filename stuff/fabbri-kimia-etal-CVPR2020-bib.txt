@@ -1,0 +1,7 @@
+@inproceedings{Fabbri:Kimia:etal:CVPR2020,
+  title={TRPLP-Trifocal Relative Pose From Lines at Points},
+  author={Fabbri, Ricardo and Duff, Timothy and Fan, Hongyi and Regan, Margaret H and Pinho, David da Costa de and Tsigaridas, Elias and Wampler, Charles W and Hauenstein, Jonathan D and Giblin, Peter J and Kimia, Benjamin and Pajdla, Tomas},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={12073--12083},
+  year={2020}
+}
