@@ -5,3 +5,15 @@
   pages={12073--12083},
   year={2020}
 }
+
+@article{Fabbri:Kimia:etal:PAMI2022,
+  author={Fabbri, Ricardo and Duff, Timothy and Fan, Hongyi and Regan, Margaret H and Pinho, David da Costa de and Tsigaridas, Elias and Wampler, Charles W and Hauenstein, Jonathan D and Giblin, Peter J and Kimia, Benjamin and Pajdla, Tomas},
+  journal={IEEE Transactions on Pattern Analysis and Machine Intelligence}, 
+  title={Camera Pose Estimation Using First-Order Curve Differential Geometry}, 
+  year={2022, Accepted},
+  volume={},
+  number={},
+  pages={1-1},
+  doi={}
+}
+
